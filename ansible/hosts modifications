@@ -1,0 +1,9 @@
+# These are the additions made to the defualt ansible 'hosts' file, it is located in /etc/ansible/hosts
+# Groups of hosts are indentified by [brackets] in the below modifications there are 2 host groups 'webservers' and 'elk'
+
+[webservers]
+10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+
+[elk]
+10.1.0.4 ansible_python_interpreter=/usr/bin/python3
