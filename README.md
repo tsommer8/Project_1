@@ -6,8 +6,8 @@ The files in this repository were used to configure the network illustrated belo
 
 These files have been tested and used to generate a live E.L.K. deployment on Azure. They can be used to either recreate the entire deployment pictured above, or select portions of the Playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-  [etc/ansible/install-elk.yml
-
+  [etc/ansible/install-elk.yml](https://github.com/tsommer8/Project_1/blob/dbf31fb2fd08aa86dfa5e6ad5644797d0ea743ab/ansible/.YML%20Scripts/install_elk.yml)
+  
 This document contains the following details:
 - Description of the Topology
 - Access Policies
@@ -22,48 +22,52 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly secure, in addition to restricting access to the network.
-- Availiability, one of the three main ideas for the cybersecurity triad is protected with a load balancer. 
-- The Jumpbox with in our network serves a two fold purpose. The first allows us to deploy software to the multiple web VM's in a single move using Docker/Ansible, instead of having to install in on each one at a time. Second, it allows for more restriced access to the network given our network security rules (NSG).
+- What aspect of security do load balancers protect?
+  - Availiability, one of the three main objectives of the cybersecurity triad is protected with a load balancer. 
+- What is the advantage of a jump box?
+  - The JumpBox with in this network serves a two fold purpose. The first allows us to deploy software to the multiple web VM's in a single move using Docker/Ansible, instead of having to install software to them individually. Second, it allows for more restriced access to the network given our network security group (NSG) rules.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- Filebeat is used for monitering log files on the web VM's that are hosting the DVWA. Then sends those logs to Elasticsearch/Logstash for later reveiw by a cybersecurity specialist.
-- Metricbeat beat works in a simialar fashion to Filebeat, however it is more statistic driven providing various different types of graphs to give the cybersecuirty specialist a better snap shot of what is going on with the web VM's.
+Integrating an E.L.K. server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
+- What does Filebeat watch for?
+  - Filebeat is used for monitering log files on the web VM's that are hosting the DVWA. Then sends those logs to Elasticsearch/Logstash for later reveiw     by a cybersecurity specialist.
+- What does Metricbeat record?
+  - Metricbeat beat works in a simialar fashion to Filebeat, however it is more statistic driven providing various different types of graphs to give the       cybersecuirty specialist a better snap shot of what is going on with the web VM's.
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| JumpBox  | Gateway  | 10.0.0.4   | Linux (Ubuntu)   |
+| Web-1    | DVWA     | 10.0.0.5   | Linux (Ubuntu)   |
+| Web-2    | DVWA     | 10.0.0.6   | Linux (Ubuntu)   |
+| ELK-Stack| ELK      | 10.1.0.4   | Linux (Ubuntu)   |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the JumpBox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP address:
+- 58.215.90.36
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by SSH protocol via port 22.
+-The JumpBox was the only machinge that had access to the E.L.K. VM, its IP address is 10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | Yes                 | 58.215.90.36         |
+| Web-1    | No                  | 10.0.0.4             |
+| Web-2    | No                  | 10.0.0.4             |
+| ELK-Stack| No                  | 10.0.0.4             |
 
-### Elk Configuration
+### E.L.K. Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because
+deploying automation simultaneously across multiple machine reduce the risk of error in setting them up individually/manually.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+- Install  
 - ...
 - ...
 
