@@ -6,7 +6,7 @@ The files in this repository were used to configure the network illustrated belo
 
 These files have been tested and used to generate a live E.L.K. deployment on Azure. They can be used to either recreate the entire deployment pictured above, or select portions of the Playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-  [etc/ansible/install-elk.yml](https://github.com/tsommer8/Project_1/blob/dbf31fb2fd08aa86dfa5e6ad5644797d0ea743ab/ansible/.YML%20Scripts/install_elk.yml)
+  [etc/ansible/install-elk.yml](
   
 This document contains the following details:
 - Description of the Topology
