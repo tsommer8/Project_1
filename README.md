@@ -29,7 +29,7 @@ Load balancing ensures that the application will be highly secure, in addition t
 
 Integrating an E.L.K. server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
 - What does Filebeat watch for?
-  - Filebeat is used for monitering log files on the web VM's that are hosting the DVWA. Then sends those logs to Elasticsearch/Logstash for later reveiw     by a cybersecurity specialist.
+  - Filebeat is used for monitering log files on the web VM's that are hosting the DVWA. Which then sends those logs to Elasticsearch/Logstash for later reveiw by a cybersecurity specialist.
 - What does Metricbeat record?
   - Metricbeat beat works in a simialar fashion to Filebeat, however it is more statistic driven providing various different types of graphs to give the       cybersecuirty specialist a better snap shot of what is going on with the web VM's.
 
