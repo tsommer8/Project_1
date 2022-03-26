@@ -97,10 +97,9 @@ SSH into the control node and follow the steps below:
   - [filebeat-config.yml](https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb)
   - [metricbeat-config.yml](https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.4.0-amd64.deb)
 - Update the respective .config files as per indicated in [ansible/-config.yml modifications/filebeat-config.yml](https://github.com/tsommer8/Project_1/blob/1fc9c516b4f9af0bb5d4ddbf1c381f21c8c588aa/ansible/-config.yml%20modifications/filebeat-config.yml-) and [ansible/-config.yml modifications/metricbeat-config.yml](https://github.com/tsommer8/Project_1/blob/1fc9c516b4f9af0bb5d4ddbf1c381f21c8c588aa/ansible/-config.yml%20modifications/metricbeat-config.yml)
- -  Run the following playbooks using `ansible-playbook (NAME)`, and navigate to the ELK virtual machine to check that the installation worked as             expected.
-    - Filebeats, [ansible/.YML Scripts/install-launch_filebeat.yml](https://github.com/tsommer8/Project_1/blob/c34e5301acb2a2e17cfd8d4d15dcd6b32b4adef5/ansible/.YML%20Scripts/install-launch_filebeat.yml)
-    - Metricbeats, [ansible/.YML Scripts/install-launch_metricbeat.yml](https://github.com/tsommer8/Project_1/blob/c34e5301acb2a2e17cfd8d4d15dcd6b32b4adef5/ansible/.YML%20Scripts/install-launch_metricbeat.yml)
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- Modifications will need to be made to the ansible hosts file located at /etc/ansible/hosts. An example of these changes can be found here [ansible/hosts modifications](https://github.com/tsommer8/Project_1/blob/229a93dd317cd02276d9a527f883fe417b61c903/ansible/hosts%20modifications). The modifications to the hosts file along with the dictation in the .yml scripts ran below will dictate what you are launching on.
+- Run the following playbooks using `ansible-playbook (NAME)`, and navigate to the ELK virtual machine to check that the installation worked as             expected.
+  - Filebeats, [ansible/.YML Scripts/install-launch_filebeat.yml](https://github.com/tsommer8/Project_1/blob/c34e5301acb2a2e17cfd8d4d15dcd6b32b4adef5/ansible/.YML%20Scripts/install-launch_filebeat.yml)
+  - Metricbeats, [ansible/.YML Scripts/install-launch_metricbeat.yml](https://github.com/tsommer8/Project_1/blob/c34e5301acb2a2e17cfd8d4d15dcd6b32b4adef5/ansible/.YML%20Scripts/install-launch_metricbeat.yml)
+- Open a web browser and navigate to http://[yourELKVM.IP]:5601/app/kibana to test if the E.L.K is runnig.
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
