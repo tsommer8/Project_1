@@ -67,10 +67,13 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 deploying automation simultaneously across multiple machine reduce the risk of error in setting them up individually/manually.
 
 The playbook implements the following tasks:
-- Install  
-- ...
-- ...
-
+- Installs docker.io, python3-pip and docker  
+- Increases and grants use of virtual memory
+- Launches E.L.K. container with `run sebp/elk:761` with published ports:
+  - 5601:5601 
+  - 9200:9200 
+  - 5044:5044
+  
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 ![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
