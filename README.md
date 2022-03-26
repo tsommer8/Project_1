@@ -93,12 +93,13 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
-
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
+- Curl the following URL's into /etc/ansible directory
+  - [filebeat-config.yml](https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb)
+  - [metricbeat-config.yml](https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.4.0-amd64.deb)
+- Update the respective .config files as per indicated in [ansible/-config.yml modifications/filebeat-config.yml](https://github.com/tsommer8/Project_1/blob/1fc9c516b4f9af0bb5d4ddbf1c381f21c8c588aa/ansible/-config.yml%20modifications/filebeat-config.yml-) and [ansible/-config.yml modifications/metricbeat-config.yml](https://github.com/tsommer8/Project_1/blob/1fc9c516b4f9af0bb5d4ddbf1c381f21c8c588aa/ansible/-config.yml%20modifications/metricbeat-config.yml)
+ -  Run the following playbooks using `ansible-playbook (NAME)`, and navigate to the ELK virtual machine to check that the installation worked as             expected.
+    - Filebeats, [ansible/.YML Scripts/install-launch_filebeat.yml](https://github.com/tsommer8/Project_1/blob/c34e5301acb2a2e17cfd8d4d15dcd6b32b4adef5/ansible/.YML%20Scripts/install-launch_filebeat.yml)
+    - Metricbeats, [ansible/.YML Scripts/install-launch_metricbeat.yml](https://github.com/tsommer8/Project_1/blob/c34e5301acb2a2e17cfd8d4d15dcd6b32b4adef5/ansible/.YML%20Scripts/install-launch_metricbeat.yml)
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
 - _Which URL do you navigate to in order to check that the ELK server is running?
 
